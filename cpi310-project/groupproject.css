@@ -1,0 +1,102 @@
+ul {
+	position:fixed;
+	width:100%;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+  font-family: Verdana,Geneva,sans-serif; 
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #111;
+}
+
+.active {
+  background-color: #EF2626;
+}
+
+#footer
+{
+	background-color: #333;
+	width: 100%;
+    height: 50px;
+	position: fixed;
+    bottom: 0px;
+}
+
+#header
+{
+  display: block;
+	position:fixed;
+  width:100%;
+  height:18%;
+	top:0;
+    background-color: #0a00b7;
+    background-image: linear-gradient(to right, #0a00b7, #ABE9CD
+    ); /* Standard syntax (must be last) */
+
+}
+
+#title
+{
+	text-align:center;
+	font-family: Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif; 
+	color: white;
+    margin-right: 39%;
+    float: right;
+    font-size: 50px;
+    margin-top: 3%;
+}
+#copyright
+{
+	position: fixed;
+    bottom: 0;
+}
+#playfuldog
+{
+	width:482px;
+}
+
+#contentpic
+{
+    margin-left: 7%;
+  display: inline-block;
+
+}
+
+
+#content
+{
+	font-size: 221%;
+    font-family: sans-serif;
+	margin-top: 0%;
+	    margin-left: 41%;
+    margin-right: 9%;
+}
+
+#contentcontainer
+{
+  margin-top: 100px;
+  display: block;
+    width: 100%;
+
+}
+
+body { 
+  background: url("texture.jpg") repeat 0 0;
+}
+

@@ -1,0 +1,38 @@
+
+
+
+#title
+{
+	text-align:center;
+	font-family: Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif; 
+	color: white;
+    margin-right: 39%;
+    float: right;
+    font-size: 50px;
+    margin-top: 3%;
+}
+#copyright
+{
+	position: fixed;
+    bottom: 0;
+}
+#playfuldog
+{
+	width:482px;
+}
+
+#contentpic
+{
+    margin-left: 7%;
+	float:left;
+}
+
+
+#content
+{
+	font-size: 221%;
+    font-family: sans-serif;
+	margin-top: 3%;
+	margin-left: 41%;
+    margin-right: 9%;
+}

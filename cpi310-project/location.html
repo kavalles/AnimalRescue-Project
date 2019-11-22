@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<head>
+<link rel="stylesheet" href="contact.css">
+<link rel="stylesheet" href="navigation.css">
+<link rel="stylesheet" href="groupproject.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="about.js"></script>
+
+</head>
+<body>
+<!-- Banner -->
+<!-- dog logo--->
+<div id="header">
+<img src="projectlogoblue.png" href="groupproject.html" alt="Freedom Tails" width="150">
+<h1 id="title">Freedom Tails Rescue</h1>
+<button onclick="document.getElementById('loginform').style.display='block'" style="width:auto;" class="loginbutton">Login</button>
+<a href="signup.html" class="registerbutton">Register</a>
+
+<!-- Nav Bar -->
+<!-- Home, About, Shop, Contact -->
+<!-- Load font awesome icons -->
+
+<!-- The navigation menu -->
+<div class="navbar">
+  <a href="home.html">Home</a>
+  <div class="subnav">
+    <button class="subnavbtn">About <i class="fa fa-caret-down"></i></button>
+    <div class="subnav-content">
+      <a href="MissionStatement.html">Mission Statement</a>
+      <a href="#link2a">Link 2</a>
+      <a href="#link3a">Link 3</a>
+    </div>
+  </div>
+  <div class="subnav">
+    <button class="subnavbtn">Volunteer <i class="fa fa-caret-down"></i></button>
+    <div class="subnav-content">
+      <a href="#link1b">Link 1 </a>
+      <a href="#link2b">Link 2</a>
+      <a href="#link3b">Link 3</a>
+      <a href="#link4b">Link 4</a>
+    </div>
+  </div>
+  <div class="subnav">
+    <button class="subnavbtn">Contact <i class="fa fa-caret-down"></i></button>
+    <div class="subnav-content">
+      <a href="email.html">Email us!</a>
+      <a href="location.html">Call us!</a>  
+      <a href="#link3c">Owner Surrender</a>  
+
+    </div>
+  </div>
+  <div id = "socialmedia">
+    <a href="#" class="fa fa-facebook"></a>
+  <a href="#" class="fa fa-twitter"></a>
+  <a href="#" class="fa fa-google"></a> 
+  <a href="#" class="donate">DONATE</a>
+
+  </div>
+  <a href="#contact">Store</a>
+</div>
+
+<!--Content-->
+<div id="contentcontainer">
+
+      <div id="loginform" class="modal">
+    
+          <form class="modal-content animate" action="/action_page.php" method="post">
+            <div class="imgcontainer">
+              <span onclick="document.getElementById('loginform').style.display='none'" class="close" title="Close Modal">&times;</span>
+              <img src="avatar.png" alt="Avatar" class="avatar">
+            </div>
+        
+            <div class="container">
+              <label for="uname"><b>Username</b></label>
+              <input type="text" placeholder="Enter Username" name="uname" required>
+        
+              <label for="psw"><b>Password</b></label>
+              <input type="password" placeholder="Enter Password" name="psw" required>
+                
+              <button type="submit">Login</button>
+              <label>
+                <input type="checkbox" checked="checked" name="remember"> Remember me
+              </label>
+            </div>
+        
+            <div class="container" style="background-color:#f1f1f1">
+              <button type="button" onclick="document.getElementById('loginform').style.display='none'" class="cancelbtn">Cancel</button>
+              <span class="psw">Forgot <a href="#">password?</a></span>
+            </div>
+          </form>
+        </div>
+  <p id="text">Freedom Tails Rescue<br>
+      *Address goes here<br>
+      Phone: (480) 688-6663<br>
+      *Hours go here
+  </p> 
+  <div id ="contentpic">
+    <img id="pitbulldogs" src="dog2.jpg" width="600px">
+
+  </div>
+
+</div>
+
+</div>
+      
+
+</body>
+
+</html>
