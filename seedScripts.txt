@@ -11,14 +11,15 @@ date_of_birth TEXT,
 password VARCHAR,
 email VARCHAR NOT NULL UNIQUE,
 is_admin BOOLEAN,
-session_active BOOLEAN
+session_token TEXT,
+token_update_time TEXT
 );
 
-INSERT INTO user (username, first_name, last_name, date_of_birth, password, email, session_active, is_admin)
+INSERT INTO user (username, first_name, last_name, date_of_birth, password, email, is_admin)
 VALUES
-("felix12","felix","mueller","1990-01-12 10:00:00","felixfelix","felix@felix.felix",1, 1),
-("kate34","katelyn","mueller","1993-05-31 10:00:00","katekate","anne.katelyn_09@live.com",0, 1),
-("bobjoe21","Bob Joe","Smith","1963-05-30 10:00:00","bob1232","bob.joe43@live.com",0, 0);
+("felix12","felix","mueller","1990-01-12 10:00:00","felixfelix","felix@felix.felix",1 ),
+("kate34","katelyn","mueller","1993-05-31 10:00:00","katekate","anne.katelyn_09@live.com",0 ),
+("bobjoe21","Bob Joe","Smith","1963-05-30 10:00:00","bob1232","bob.joe43@live.com",0);
 
 
 DROP TABLE IF EXISTS dog;

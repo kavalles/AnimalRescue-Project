@@ -1,0 +1,20 @@
+{
+	"name": "mynodejsapp",
+	"version": "1.0.0",
+	"description": "This is a very simple node app that does basically nothing",
+	"main": "app.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"start": "nodemon index.js"
+	},
+	"author": "Katelyn",
+	"license": "ISC",
+	"dependencies": {
+		"express": "^4.17.1",
+		"express-handlebars": "^3.1.0",
+		"sqlite3": "^4.1.0"
+	},
+	"devDependencies": {
+		"nodemon": "^2.0.0"
+	}
+}
