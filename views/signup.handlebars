@@ -1,7 +1,10 @@
 
-<form action="/signup" method="POST">
   <!--Content-->
 
+
+{{#each css}}
+        <link rel="stylesheet" href="/css/{{this}}">
+{{/each}}
     <h1>Signup Here!</h1>
 
     <h2>Already have an account?</h2>
@@ -40,4 +43,3 @@
     </br></br>
 
     <input type="submit" value="Submit">
-</form>
