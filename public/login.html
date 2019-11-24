@@ -1,10 +1,14 @@
 <!DOCTYPE html>
-
+<html>
 <head>
     <link rel="stylesheet" href="/css/common.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="/js/forms.js"></script>
+    
+<script src="/js/common.js"></script>
     <title>Login</title>
+
+
+
 </head>
 
 <body onload="start()">
@@ -16,13 +20,13 @@
     
     <!-- Nav Bar -->
     <!-- Home, About, Shop, Contact -->
-    <div class="navbar">
+    <div id="navbar" class="navbar">
     
         <a href="home.html">Home</a>
           <a href="about.html">About</a>
          
           <a href="#.html">Volunteer</a>
-          <a href="shop.html">Store</a>
+          <a href="#.html">Store</a>
           
       
           <div class="subnav">
@@ -52,15 +56,16 @@
         <br>
         <br>
         <label for="uname"><b>Username <br></b></label>
-        <input type="text" placeholder="Enter Username" name="username" required>
+        <input id="usernameTxt" type="text" placeholder="Enter Username" name="username" required>
 
         <br><br>
     
         <label for="psw"><b>Password <br></b></label>
-        <input type="password" placeholder="Enter Password" name="password" required>
+        <input id="passwordTxt" type="password" placeholder="Enter Password" name="password" required>
 
         <br><br>
 
-        <input type="submit" value="Submit">
+        <input type="submit" value="Submit" onclick="login()">
 
     </body>
+    </html>

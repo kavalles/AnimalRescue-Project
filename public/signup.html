@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-
+<html>
 <head>
     <link rel="stylesheet" href="/css/common.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="/js/forms.js"></script>
+    
+<script src="/js/common.js"></script>
     <title>Sign up</title>
 </head>
 
@@ -16,7 +17,7 @@
     
     <!-- Nav Bar -->
     <!-- Home, About, Shop, Contact -->
-    <div class="navbar">
+    <div id="navbar" class="navbar">
     
         <a href="home.html">Home</a>
           <a href="about.html">About</a>
@@ -29,7 +30,7 @@
                     
                   </div>
           <a href="#.html">Volunteer</a>
-          <a href="shop.html">Store</a>
+          <a href="#.html">Store</a>
         
     
       </div>
@@ -49,35 +50,36 @@
 
     </br> </br>
     <label for="username"><b>Username: <br></b></label>
-    <input type="text" placeholder="Select a username here" name="username" required>
+    <input id ="usernameTxt" type="text" placeholder="Select a username here" name="username" required>
 
     </br> </br>
 
     <label for="firstname"><b>First Name: <br></b></label>
-    <input type="text" placeholder="Input your first name" name="first_name" required>
+    <input id ="firstnameTxt" type="text" placeholder="Input your first name" name="first_name" required>
 
     </br> </br>
     
     <label for="lastname"><b>Last Name: <br></b></label>
-    <input type="text" placeholder="Input your last name" name="last_name" required>
+    <input id ="lastnameTxt" type="text" placeholder="Input your last name" name="last_name" required>
 
     </br> </br>
     
     <label for="date_of_birth"><b>Birthday: <br></b></label>
-    <input type="date" placeholder="Format: YYYY-MM-DD" name="date_of_birth" required>
+    <input id ="birthdayTxt" type="date" placeholder="Format: YYYY-MM-DD" name="date_of_birth" required>
 
 
     </br> </br>
     
-    <label for="password"><b>password: <br></b></label>
-    <input type="password" placeholder="Create a secure password!" name="password" required>
+    <label for="password"><b>Password: <br></b></label>
+    <input id ="passwordTxt" type="password" placeholder="Create a secure password!" name="password" required>
 
     </br> </br>
     
     <label for="email"><b>Email: <br></b></label>
-    <input type="email" placeholder="Input email address here" name="email" required>
+    <input id ="emailTxt" type="email" placeholder="Input email address here" name="email" required>
 
     </br></br>
 
-    <input type="submit" value="Submit">
+    <input type="submit" value="Submit" onclick="signup()">
 </body>
+</html>

@@ -3,23 +3,35 @@
 
 const sqlite3 = require('sqlite3').verbose();
 const express = require("express");
+var cors = require('cors');
 var http = require('http');
 var fs = require("fs");
 var app = express();
 
-const bodyParser = require('body-parser')
+const bodyParser = require('body-parser');
+
+app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.json());
 
 //new code added
-const exphbs = require("express-handlebars");
+//const exphbs = require("express-handlebars");
 
 var path = require("path");
 //app.use(express.static(path.join(__dirname, '/public')));
+//enable cors
+app.use(cors());
+app.use(function(req, res, next) {
+	res.header("Access-Control-Allow-Origin", "*");
+	res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+	next();
+  });
+
 app.use(express.static('public'))
 app.use(express.urlencoded());
 const dbPromise = new sqlite3.Database("./mydb.sqlite3");
 app.use(bodyParser.urlencoded({extended: false}))
-app.set("view engine", "handlebars");
-app.engine("handlebars", exphbs());
+//app.set("view engine", "handlebars");
+//app.engine("handlebars", exphbs());
 
 //creates a new empty instance of a sqlite database
 var db;
@@ -64,6 +76,7 @@ function generateAuthToken(length) {
  }
 
 //need the get request to have the forms show on the website
+/*
  app.get("/signup",function(req,res){
     res.render("signup.handlebars");
 });
@@ -72,10 +85,11 @@ function generateAuthToken(length) {
 app.get("/home",function(req,res){
     res.render("home.handlebars");
 });
+*/
 
 
 //Sign up
-app.post("/signup", async (req,res) => {
+app.post("/signup", function(req,res) {
 	var{ username, first_name , last_name, date_of_birth, password, email } = req.body;
 
 	console.log(password)
@@ -93,11 +107,12 @@ app.post("/signup", async (req,res) => {
 		{
 			//res.json({ message: 'signup successful' });
 			//res.redirect("/home");
-			window.location = 'localhost:3000/home'
+			//window.location = 'localhost:3000/home'
+			return res.send(JSON.stringify({message:'Signup successful.'}));
 		}
 		else {
 			console.log({message:err.toString()});
-			return res.render("signup", { error: err.toString() });
+			return res.send(JSON.stringify({ error: err.toString()}));
 		}
 	});
 
@@ -106,12 +121,10 @@ app.post("/signup", async (req,res) => {
 //if username exists but password doesn't work return incorrect password
 
 //need the get request to have the forms show on the website
-app.get("/login",function(req,res){
-    res.render("login.handlebars");
-});
 
-app.post('/login', async (req, res) => {
+app.post('/login', function (req, res) {
 //http://localhost:3000/login?username=felix12&password=felixfelix
+console.log(req.body);
 	var{ username, password } = req.body;
 	password = stringToHash(password);
 	var loginString = "SELECT * FROM user WHERE username = '" + username + "' AND password = '" + password + "'";
@@ -121,23 +134,31 @@ app.post('/login', async (req, res) => {
 		if(err !== null) //if there is an error, print it out
 		{
 			console.log(err);
-			console.log("kiwi");
+		
 		}
 		else //if there is no error check the result
 		{
 			if(typeof row === 'undefined')
 			{
-				res.json({ message: 'login unsuccessful' });
+				res.send({ message: 'login unsuccessful' });
 			}
 			else
 			{
 					authToken = generateAuthToken(10);
 					var authTokenUpdateQuery = "UPDATE user SET authToken = '"+authToken+"' WHERE username = '"+username+"' AND password = '" + password;
-					res.json({ message: 'login successful' });
+					res.send(JSON.stringify({ message: 'login successful', authToken: authToken, username: username}));
+					//console.log(successful);
 			}
 		}
 	});
 });
+
+/*
+app.get("/login",function(req,res){
+    res.render("login.handlebars");
+});
+*/
+
 
 const setup = async () => {
 	//const db = await dbPromise;
