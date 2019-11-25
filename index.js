@@ -100,7 +100,7 @@ app.post("/signup", function(req,res) {
 	var signUpSqlCommand = `INSERT INTO user (username, first_name, last_name, date_of_birth, password, email)
 	VALUES
 	("`+ username + `","` + first_name + `","` + last_name + `","` + date_of_birth + `","` + password + `","` + email + `");`;
-
+	  
 	//if username or email already exist, an error is returned.
 	db.run(signUpSqlCommand,  (err) => {
 		if(err === null)
@@ -108,7 +108,10 @@ app.post("/signup", function(req,res) {
 			//res.json({ message: 'signup successful' });
 			//res.redirect("/home");
 			//window.location = 'localhost:3000/home'
-			return res.send(JSON.stringify({message:'Signup successful.'}));
+			return res.send(JSON.stringify({message:'Signup successful'}));
+
+			
+		
 		}
 		else {
 			console.log({message:err.toString()});
@@ -123,7 +126,6 @@ app.post("/signup", function(req,res) {
 //need the get request to have the forms show on the website
 
 app.post('/login', function (req, res) {
-//http://localhost:3000/login?username=felix12&password=felixfelix
 console.log(req.body);
 	var{ username, password } = req.body;
 	password = stringToHash(password);
@@ -145,13 +147,78 @@ console.log(req.body);
 			else
 			{
 					authToken = generateAuthToken(10);
-					var authTokenUpdateQuery = "UPDATE user SET authToken = '"+authToken+"' WHERE username = '"+username+"' AND password = '" + password;
+					var authTokenUpdateQuery = "UPDATE user SET session_token = '"+authToken+"' WHERE username = '"+username+"' AND password = '" + password+"';";
+
+					db.run(authTokenUpdateQuery,  (err) => {
+						if(err !== null)
+						{
+							console.log({message:err.toString()});
+							return res.send(JSON.stringify({ error: err.toString()}));
+						}
+					});
+				
+
+
 					res.send(JSON.stringify({ message: 'login successful', authToken: authToken, username: username}));
-					//console.log(successful);
+					
 			}
 		}
 	});
 });
+
+app.post('/application', function (req,res)
+{
+
+	var{username, isEmployed, occupation, address, authToken } = req.body;
+	console.log(req.body);
+
+	var idQuery = "SELECT id FROM user WHERE username = '"+username+"' AND session_token = '"+authToken+"';";
+
+	db.get(idQuery,  function(err, row){
+		if(err !== null) //if there is an error, print it out
+		{
+			console.log(err);
+		
+		}
+		else //if there is no error check the result
+		{
+			if(typeof row === 'undefined')
+			{
+				res.send({ message: 'application user confirmation unsuccessful' });
+			}
+			else
+			{
+				var applicationSqlCommand = `INSERT INTO application (user_id, is_employed, occupation, home_address)
+				VALUES
+				("`+ row.id + `","` + isEmployed + `","` + occupation + `","` + address + `");`;
+			
+				console.log(applicationSqlCommand);
+				//if username or email already exist, an error is returned.
+				db.run(applicationSqlCommand,  (err) => {
+					if(err === null)
+					{
+						
+						//res.redirect("/home");
+						//window.location = 'localhost:3000/home'
+						return res.send(JSON.stringify({message:'Application submission successful. Your application will be reviewed'}));
+						res.redirect("/home"); 
+					}
+					else {
+						console.log({message:err.toString()});
+						return res.send(JSON.stringify({ error: err.toString()}));
+					}
+				});
+			}
+		}
+	});
+
+
+	
+
+
+
+});
+
 
 /*
 app.get("/login",function(req,res){

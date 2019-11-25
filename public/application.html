@@ -1,28 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+<script src="/js/common.js"></script>
+    
+</head>
 
+<body onload="start()">
+    <!-- Banner -->
+<!-- dog logo--->
+<div id="header">
+    <img src="/images/projectlogoblue.png" href="groupproject.html" alt="Freedom Tails" width="150">
+    <h1 id="title">Freedom Tails Rescue</h1>
+    
+    <!-- Nav Bar -->
+    <!-- Home, About, Shop, Contact -->
+    <div id="navbar" class="navbar">
+    
+        <a href="home.html">Home</a>
+          <a href="about.html">About</a>
+          <div class="subnav">
+                  <button class="subnavbtn">Contact <i class="fa fa-caret-down"></i></button>
+                  <div class="subnav-content">
+                    <a href="email.html">Email us</a>
+                    <a href="location.html">Call us</a>
+                    <a href="#link3c">Owner Surrender</a>  
+                    
+                  </div>
+          <a href="#.html">Volunteer</a>
+          <a href="#.html">Store</a>
+        
+    
+      </div>
+      <div id = "socialmedia">
+              <a href="https://www.facebook.com/Freedomtailsrescue/" class="fa fa-facebook"></a>
+            <a href ="https://twitter.com/FreedomTails" class="fa fa-twitter"></a>
+            <a id="paypalElement"></a>
+            </div>
+      </div>
 
 <h1>Fill out your application here!</h1>
-
-        <label for="username"><b>Username <br></b></label>
-        <input type="text" placeholder="Enter Username" name="username" required>
-
+        <!--didn't need username since they'd have to be logged in anyway to submit application form-->
         <br><br>
 
         <label for="is_employed"><b>Are you employed? <br></b></label>
-        <select name="is_employed"> 
-            <option value="true">Am Employed</option> 
-            <option value="false">Not Employed</option> 
+        <select id ="employed" name="is_employed"> 
+            <option value="false">No</option>
+            <option value="true">Yes</option>  
         </select>
 
         <br><br>
 
-        <label for="occupation"><b>If yes, what is your job? <br></b></label>
-        <input type="text" placeholder="Enter Occupation here" name="occupation">
+        <label for="occupation"><b>If yes, what is your occupation? <br></b></label>
+        <input id ="occupationTxt" type="text" placeholder="Enter Occupation here" name="occupation">
 
         <br><br>
 
         <label for="home_address"><b>What is your home address?<br></b></label>
-        <input type="text" placeholder="Input your address" name="home_address" required>
+        <input id ="addressTxt" type="text" placeholder="Input your address" name="home_address" required>
 
         <br><br>
 
-        <input type="submit" value="Submit">
+        <input type="submit" value="Submit" onclick="application()">
+
+        </div>
+        
+    <body>
+
+</html>

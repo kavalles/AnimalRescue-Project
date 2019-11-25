@@ -29,9 +29,18 @@ function login()
 
   responseText = sendPostRequest(payLoad,'http://localhost:3000/login');
 
-  document.cookie = "username="+responseText.username;
-  document.cookie = "authToken="+responseText.authToken;
-  printUserInfo();
+  if(responseText.message != null && responseText.message === "login unsuccessful")
+  {
+    alert(responseText.message)
+  }
+  else
+  {
+    document.cookie = "username="+responseText.username;
+    document.cookie = "authToken="+responseText.authToken;
+    printUserInfo();
+  }
+
+
 }
 
 
@@ -45,15 +54,38 @@ function login()
         var dob = document.getElementById("birthdayTxt").value;
         var pw = document.getElementById("passwordTxt").value;
         var email = document.getElementById("emailTxt").value;
-        
-    
+
         var payLoad = {username:usr,firstname:firstname,lastname:lastname,birthday:dob,password:pw,email:email};   
         
-        responseText = sendPostRequest(payLoad,'http://localhost:3000/signup');
+        responseText = sendPostRequest(payLoad,'http://localhost:3000/signup');   
+        
+        alert(responseText.message.toString());
 
         
       }
 
+  function application()
+  {
+    //var user = document.getElementById("usernameTxt").value;
+    var isEmployed = document.getElementById("employed").selectedIndex;
+    var job = document.getElementById("occupationTxt").value; 
+    var addr = document.getElementById("addressTxt").value;
+
+    //get username
+    var username = getCookie("username");
+
+    //get authToken from cookie
+    var authToken = getCookie("authToken");
+
+    var payLoad = {username:username, isEmployed: isEmployed, occupation:job, address: addr, authToken: authToken};
+
+    responseText = sendPostRequest(payLoad,'http://localhost:3000/application');
+    
+    alert(responseText.message.toString());
+  
+  }
+
+      
 
       
 function start()
@@ -77,4 +109,33 @@ function displayPayPal()
 function printUserInfo()
 {
   alert("This user is currently logged in (and the info is available in the cookie):\n" + document.cookie);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function getCookie(cname) {
+  var name = cname + "=";
+  var decodedCookie = decodeURIComponent(document.cookie);
+  var ca = decodedCookie.split(';');
+  for(var i = 0; i <ca.length; i++) {
+    var c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
 }
