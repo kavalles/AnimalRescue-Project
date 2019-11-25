@@ -235,3 +235,19 @@ li {
     right: 10%;
 
   }
+
+#paypalElement
+{
+  margin-top: -16px;
+}
+
+#loginChange{
+  font-size: 27px;
+  width: 12%;
+  float: right;
+  margin-top: 8px;
+  color: white;
+  margin-left:;
+  font-family: serif;
+  margin-top: 8px;
+}

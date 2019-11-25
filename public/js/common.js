@@ -10,7 +10,7 @@ function sendPostRequest(payLoad,url)
   http.send(body);
 
   if (http.status === 200) {
-    console.log(http.responseText);
+    console.log(http.responseText); 
     return JSON.parse(http.responseText);
   }
 /*
@@ -38,12 +38,14 @@ function login()
     document.cookie = "username="+responseText.username;
     document.cookie = "authToken="+responseText.authToken;
     printUserInfo();
-  }
+    window.location.href= '/home.html'
 
+
+  }
 
 }
 
-
+//log out erases the cookie
 
       //signup part
       function signup()
@@ -59,7 +61,12 @@ function login()
         
         responseText = sendPostRequest(payLoad,'http://localhost:3000/signup');   
         
+
+        //if you sign up with same username or email then send an error
+
         alert(responseText.message.toString());
+
+        window.location.href= '/login.html'
 
         
       }
@@ -84,13 +91,20 @@ function login()
     alert(responseText.message.toString());
   
   }
-
-      
-
-      
+    
 function start()
 {
+
     displayPayPal();
+
+    var username = getCookie("username");
+    if(username !== "")
+    {
+       document.getElementById("loginChange").innerHTML="Hello " + username;
+       document.getElementById("signupNav").style.display = "none";
+    }
+    
+
 }
 
 function displayPayPal() 
