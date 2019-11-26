@@ -13,11 +13,6 @@ function sendPostRequest(payLoad,url)
     console.log(http.responseText); 
     return JSON.parse(http.responseText);
   }
-/*
-  http.onreadystatechange = (e) => {
-      console.log(http.responseText);
-      return http.responseText;
-    }*/
 }
 
 function login()
@@ -46,6 +41,10 @@ function login()
 }
 
 //log out erases the cookie
+function logOut()
+{
+
+}
 
       //signup part
       function signup()
@@ -63,7 +62,7 @@ function login()
         
 
         //if you sign up with same username or email then send an error
-
+        
         alert(responseText.message.toString());
 
         window.location.href= '/login.html'
@@ -98,10 +97,20 @@ function start()
     displayPayPal();
 
     var username = getCookie("username");
+    
+     //if they are signed in display their name and hide the signup button
     if(username !== "")
     {
        document.getElementById("loginChange").innerHTML="Hello " + username;
        document.getElementById("signupNav").style.display = "none";
+
+    }
+
+    //if someone is logged out, they can't see the application form
+
+    if(username == "")
+    {
+          document.getElementById("applicationNav").style.display = "none";
     }
     
 

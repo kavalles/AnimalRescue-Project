@@ -75,18 +75,6 @@ function generateAuthToken(length) {
 	return result;
  }
 
-//need the get request to have the forms show on the website
-/*
- app.get("/signup",function(req,res){
-    res.render("signup.handlebars");
-});
-
-//need the get request to have the forms show on the website
-app.get("/home",function(req,res){
-    res.render("home.handlebars");
-});
-*/
-
 
 //Sign up
 app.post("/signup", function(req,res) {
@@ -106,16 +94,14 @@ app.post("/signup", function(req,res) {
 		if(err === null)
 		{
 			//res.json({ message: 'signup successful' });
-			//res.redirect("/home");
-			//window.location = 'localhost:3000/home'
+		
 			return res.send(JSON.stringify({message:'Signup successful'}));
 
-			
-		
 		}
 		else {
 			console.log({message:err.toString()});
 			return res.send(JSON.stringify({ error: err.toString()}));
+			
 		}
 	});
 
@@ -212,25 +198,10 @@ app.post('/application', function (req,res)
 		}
 	});
 
-
-	
-
-
-
 });
-
-
-/*
-app.get("/login",function(req,res){
-    res.render("login.handlebars");
-});
-*/
-
 
 const setup = async () => {
-	//const db = await dbPromise;
 	createDb();
-	//db.migrate({ force: "last" });
 	app.listen(3000, () => {console.log("Server running on port 3000");});
 };
 
