@@ -41,10 +41,7 @@ function login()
 }
 
 //log out erases the cookie
-function logOut()
-{
 
-}
 
       //signup part
       function signup()
@@ -112,8 +109,11 @@ function start()
     {
           document.getElementById("applicationNav").style.display = "none";
     }
-    
+}
 
+function volunteer()
+{
+  alert("Application has been submitted");
 }
 
 function displayPayPal() 
@@ -133,16 +133,6 @@ function printUserInfo()
 {
   alert("This user is currently logged in (and the info is available in the cookie):\n" + document.cookie);
 }
-
-
-
-
-
-
-
-
-
-
 
 
 

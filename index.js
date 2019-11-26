@@ -13,11 +13,9 @@ const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
-//new code added
-//const exphbs = require("express-handlebars");
 
 var path = require("path");
-//app.use(express.static(path.join(__dirname, '/public')));
+
 //enable cors
 app.use(cors());
 app.use(function(req, res, next) {
@@ -107,10 +105,6 @@ app.post("/signup", function(req,res) {
 
 });
 
-//if username exists but password doesn't work return incorrect password
-
-//need the get request to have the forms show on the website
-
 app.post('/login', function (req, res) {
 console.log(req.body);
 	var{ username, password } = req.body;
@@ -150,6 +144,13 @@ console.log(req.body);
 			}
 		}
 	});
+});
+
+app.post('/logout', function (req,res){
+
+
+
+
 });
 
 app.post('/application', function (req,res)

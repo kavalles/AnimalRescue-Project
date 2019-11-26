@@ -73,3 +73,21 @@ FOREIGN KEY (dog_id) REFERENCES dog(id)
 INSERT INTO purchase (dog_id, paid, application_id)
 VALUES(2,0,1),
 (1,0,1);
+
+DROP TABLE IF EXISTS volunteer;
+
+CREATE TABLE volunteer
+(
+id INTEGER primary key AUTOINCREMENT,
+user_id INTEGER,
+day_availability TEXT,
+time_commitment TEXT,
+time_of_day_preference TEXT,
+has_experience BOOLEAN,
+comment TEXT,
+FOREIGN KEY (user_id) REFERENCES user(id)
+);
+
+INSERT INTO volunteer (user_id ,day_availability ,time_commitment ,time_of_day_preference ,has_experience ,comment)
+VALUES(1,"monday;wednesday;friday","<3","morning;night",1,"This is a comment"),
+(1,"saturday","15-20","evening",0,"This is a comment");

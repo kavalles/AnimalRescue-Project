@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Volunteer!</title>
+<script src="/js/common.js"></script>
+    
+</head>
+
+<body onload="start()">
+        <!-- Banner -->
+    <!-- dog logo--->
+    <div id="header">
+        <img src="/images/projectlogoblue.png" href="groupproject.html" alt="Freedom Tails" width="150">
+        <h1 id="title">Freedom Tails Rescue</h1>
+        
+        <!-- Nav Bar -->
+        <!-- Home, About, Shop, Contact -->
+        <div id="navbar" class="navbar">
+        
+            <a href="home.html">Home</a>
+            <a href="about.html">About</a>
+            <div class="subnav">
+                    <button class="subnavbtn">Contact <i class="fa fa-caret-down"></i></button>
+                    <div class="subnav-content">
+                        <a href="email.html">Email us</a>
+                        <a href="location.html">Call us</a>
+                        <a href="#.html">Owner Surrender</a>  
+                        
+                    </div>
+            <a href="volunteer.html">Volunteer</a>
+            <a href="#.html">Store</a>
+            <a id="signupNav" href="signup.html">Sign-up</a>
+            <a id="applicationNav" href="application.html">Adopt Application</a>
+        
+        </div>
+        <div id = "socialmedia">
+                <a href="https://www.facebook.com/Freedomtailsrescue/" class="fa fa-facebook"></a>
+                <a href ="https://twitter.com/FreedomTails" class="fa fa-twitter"></a>
+                <a id="paypalElement"></a>
+        </div>
+
+        <div id ="loginChange">
+            <a href="login.html">Login</a>
+        
+          </div>
+        </div>
+
+        <h1>Fill out your volunteering application here!</h1>
+        <!--didn't need username since they'd have to be logged in anyway to submit application form-->
+        <br><br>
+
+        <label for="day_availability"><b>Which days are you available? (Select multiple with SHIFT button)<br></b></label>
+        <select multiple id ="day_available"> 
+            <option value="monday">Monday</option>
+            <option value="tuesday">Tuesday</option>  
+            <option value="wednesday">Wednesday</option>
+            <option value="thursday">Thursday</option>  
+            <option value="friday">Friday</option>
+            <option value="saturday">Saturday</option>  
+            <option value="sunday">Sunday</option>
+        </select>
+
+        <br><br>
+
+        <label for="time_of_day_preference"><b>When are you available?<br></b></label>
+        <select multiple id ="time_of_day_preference"> 
+            <option value="6-10">Morning 6am -10am</option>
+            <option value="10-14">Afternoon 10am - 2pm</option> 
+            <option value="14-18">Evening 2pm - 6pm</option>  
+            <option value="18-22">Night 6pm - 10pm</option>   
+        </select>
+        
+        <br><br>
+
+        <label for="time_commitment"><b>Which timeframes do you prefer?<br></b></label>
+        <select  id ="time_commitment"> 
+            <option value="<3">3 hours or less</option>
+            <option value="3-5">3 to 5 hours</option> 
+            <option value="5-10">5 to 10 hours</option>  
+            <option value="10-15">10 to 15 hours</option>   
+            <option value="15-20">15 to 20 hours</option>   
+            <option value=">20">20 or more hours</option>   
+        </select>
+
+        <br><br>
+
+        <label multiple for="time_commitment"><b>Which time of day do you prefer?<br></b></label>
+        <select  id ="time_commitment"> 
+            <option value="<3">Morning 6am -10am</option>
+            <option value="3-5">Afternoon 10am - 2pm</option> 
+            <option value="5-10">Evening 2pm - 6pm</option>  
+            <option value="10-15">Night 6pm - 10pm</option>   
+            <option value="15-20">Night 6pm - 10pm</option>   
+            <option value=">20">Night 6pm - 10pm</option>   
+        </select>
+
+        <br><br>
+
+        <label for="has_experience"><b>Do you have volunteering experience?<br></b></label>
+        <select  id ="has_experience"> 
+            <option value="1">Yes</option>
+            <option value="0">No</option> 
+        </select>
+
+        <br><br>
+
+        <input type="submit" value="Submit" onclick="volunteer()">
