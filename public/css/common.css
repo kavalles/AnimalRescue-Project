@@ -473,3 +473,9 @@ li {
       margin-right: 9%;
     }
   
+  #loginChange
+  {
+	float: right;
+    font-size: 35px;
+    color: white;
+  }
