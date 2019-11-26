@@ -1,20 +1,21 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <link rel="stylesheet" href="/css/common.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    
-<script src="/js/common.js"></script>
-    <title>Sign up</title>
+  <link rel="stylesheet" href="/css/common.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <script src="/js/common.js"></script>
+  <title>Sign up</title>
 </head>
 
 <body onload="start()">
-    <!-- Banner -->
-<!-- dog logo--->
-<div id="header">
+  <!-- Banner -->
+  <!-- dog logo--->
+  <div id="header">
     <img src="/images/projectlogoblue.png" href="groupproject.html" alt="Freedom Tails" width="150">
     <h1 id="title">Freedom Tails Rescue</h1>
-    
+
     <!-- Nav Bar -->
     <!-- Home, About, Shop, Contact -->
     <div id="navbar" class="navbar">
@@ -24,67 +25,59 @@
           <div class="subnav">
                   <button class="subnavbtn">Contact <i class="fa fa-caret-down"></i></button>
                   <div class="subnav-content">
-                    <a href="email.html">Email us</a>
-                    <a href="location.html">Call us</a>
+                    <a href="email.html">Contact us</a>
                     <a href="#link3c">Owner Surrender</a>  
-                    
+                    <a href="volunteer.html">Volunteer</a>                
                   </div>
-          <a href="volunteer.html">Volunteer</a>
-          <a href="#.html">Store</a>
-          <a id="applicationNav" href="application.html">Adopt Application</a>
-    
       </div>
+      <a href="#.html">Store</a>
+          <a id="signupNav" href="signup.html">Sign-up</a>
+          <a id="applicationNav" href="application.html">Adopt Application</a>
       <div id = "socialmedia">
               <a href="https://www.facebook.com/Freedomtailsrescue/" class="fa fa-facebook"></a>
             <a href ="https://twitter.com/FreedomTails" class="fa fa-twitter"></a>
             <a id="paypalElement"></a>
       </div>
-
       <div id ="loginChange">
         <a href="login.html">Login</a>
     
       </div>
     </div>
-    
+
     <!--Content-->
+    <div id="contentcontainer">
+      
+      <div class="login">
+        <h1>Sign up!</h1>
+        <label for="username"><b>Username: <br></b></label>
+        <input id="usernameTxt" type="text" placeholder="Select a username here" name="username" required>
 
-   <h1>Signup Here!</h1>
+        <label for="firstname"><b>First Name: <br></b></label>
+        <input id="firstnameTxt" type="text" placeholder="Input your first name" name="first_name" required>
 
-    <h2>Already have an account?</h2>
-    <a href="login.html">Login here!</a>
+        <label for="lastname"><b>Last Name: <br></b></label>
+        <input id="lastnameTxt" type="text" placeholder="Input your last name" name="last_name" required>
 
-    </br> </br>
-    <label for="username"><b>Username: <br></b></label>
-    <input id ="usernameTxt" type="text" placeholder="Select a username here" name="username" required>
+        <label for="date_of_birth"><b>Birthday: <br></b></label>
+        <input id="birthdayTxt" type="date" placeholder="Format: YYYY-MM-DD" name="date_of_birth" required>
 
-    </br> </br>
+        <label for="password"><b>Password: <br></b></label>
+        <input id="passwordTxt" type="password" placeholder="Create a secure password!" name="password" required>
 
-    <label for="firstname"><b>First Name: <br></b></label>
-    <input id ="firstnameTxt" type="text" placeholder="Input your first name" name="first_name" required>
+        <label for="email"><b>Email: <br></b></label>
+        <input id="emailTxt" type="password" placeholder="Input email address here" name="email" required>
 
-    </br> </br>
-    
-    <label for="lastname"><b>Last Name: <br></b></label>
-    <input id ="lastnameTxt" type="text" placeholder="Input your last name" name="last_name" required>
+        <p class="submit"><input type="submit" value="Submit" onclick="login()"></p>
+        <div class="login-help">
+            <h2>Already have an account?</h2>
+            <a href="login.html">Login here!</a>
+        </div>
+      
+      </div>
+    </div>
 
-    </br> </br>
-    
-    <label for="date_of_birth"><b>Birthday: <br></b></label>
-    <input id ="birthdayTxt" type="date" placeholder="Format: YYYY-MM-DD" name="date_of_birth" required>
+  </div>
 
-
-    </br> </br>
-    
-    <label for="password"><b>Password: <br></b></label>
-    <input id ="passwordTxt" type="password" placeholder="Create a secure password!" name="password" required>
-
-    </br> </br>
-    
-    <label for="email"><b>Email: <br></b></label>
-    <input id ="emailTxt" type="email" placeholder="Input email address here" name="email" required>
-
-    </br></br>
-
-    <input type="submit" value="Submit" onclick="signup()">
 </body>
+
 </html>
