@@ -50,7 +50,7 @@
 
 #contentcontainer
 {
-  margin-top: 15px;
+  margin-top: 320px;
   display: block;
     width: 100%;
 }
@@ -133,9 +133,10 @@ li {
   }
 
   /* The navigation menu */
-.navbar {
+#navbar {
     overflow: hidden;
     background-color: #333;
+	
   }
   
   /* Navigation links */
@@ -146,6 +147,7 @@ li {
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+	
   }
   
   /* The subnavigation menu */
