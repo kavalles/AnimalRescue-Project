@@ -57,18 +57,28 @@
 <div id="contentcontainer">
   
     <div class="email">
-        <h1>Contact us!</h1>
+        <h1>Or send us an email!</h1>
           <p><input type="text" name="login" id = email value="" placeholder="Subject"></p>
           <p> <textarea  id="message"> </textarea>
           </p>
           <p class="submit"><input type="submit" value="Send" onclick="sendMail(document.getElementById('email').value, document.getElementById('message').value)"></p> 
       </div>
       
-      <p class = "contact">Freedom Tails Rescue<br>
-        <br>
-        Phone: (480) 688-6663<br>
-      Mon-Fri: 12PM-5PM
-    </p> 
+      <div id ="emailText">
+          <p class = "contact">Freedom Tails Rescue<br>
+            <br>
+            Phone: (480) 688-6663<br>
+          Mon-Fri: 12PM-5PM
+        </p> 
+
+      </div>
+
+      <div id = "emailText2">
+          <img src="/images/phonedog.jpg" id = "rightPicture" />
+          <p id="content">Here at Freedom Tails we're committed and eager to hear from you! You can reach us by phone on weekdays or by email 7 days a week.<br><br>
+            Your feedback and questions are valuable to us and we'll strive to get back to you as soon as possible!
+          </p> 
+     
      
   </div>
 
