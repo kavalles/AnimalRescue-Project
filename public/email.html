@@ -12,8 +12,14 @@
 <!-- dog logo--->
 <div id="header">
 <img src="/images/projectlogoblue.png" href="groupproject.html" alt="Freedom Tails" width="150">
-<h1 id="title">Freedom Tails Rescue</h1>
-
+<h1 id="title">Freedom Tails Rescue<h1 id="subtitle">Where pets find their people</h1>
+<div class="slider" id="main-slider"><!-- outermost container element -->
+  <div class="slider-wrapper"><!-- innermost wrapper element -->
+      <img src="http://lorempixel.com/1024/400/animals" alt="First" class="slide" /><!-- slides -->
+      <img src="http://lorempixel.com/1024/400/business" alt="Second" class="slide" />
+      <img src="http://lorempixel.com/1024/400/city" alt="Third" class="slide" />
+  </div>
+</div>
 <!-- Nav Bar -->
 <!-- Home, About, Shop, Contact -->
 <!-- Load font awesome icons -->
@@ -26,9 +32,11 @@
       <div class="subnav">
               <button class="subnavbtn">Contact <i class="fa fa-caret-down"></i></button>
               <div class="subnav-content">
-                <a href="email.html">Contact us</a>
-                <a href="surrendering.html">Owner Surrender</a>  
-                <a href="volunteering.html">Volunteer</a>                
+                  <img src="/images/slide1.jpg" alt="First" class="slide" />
+                  <img src="/images/slide2.jpg" alt="Second" class="slide" />
+                  <img src="/images/slide3.jpg" alt="Third" class="slide" />
+                  <img src="/images/slide4.jpg" alt="Third" class="slide" />
+                  <img src="/images/slide5.jpg" alt="Third" class="slide" />           
               </div>
   </div>
   <a href="#.html">Adopt Here!</a>
@@ -50,11 +58,10 @@
   
     <div class="email">
         <h1>Contact us!</h1>
-          <p><input type="text" name="login" value="" placeholder="Your Name"></p>
-          <p><input type="text" name="login" value="" placeholder="Email Adress"></p>
+          <p><input type="text" name="login" id = email value="" placeholder="Subject"></p>
           <p> <textarea  id="message"> </textarea>
           </p>
-          <p class="submit"><input type="submit" value="Send" onclick=""></p> 
+          <p class="submit"><input type="submit" value="Send" onclick="sendMail(document.getElementById('email').value, document.getElementById('message').value)"></p> 
       </div>
       
       <p class = "contact">Freedom Tails Rescue<br>

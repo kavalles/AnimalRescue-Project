@@ -14,7 +14,7 @@
   display: block;
 	position:fixed;
   width:100%;
-  height:20%;
+  height:26%;
 	top:0;
     background-color: #0a00b7;
     background-image: linear-gradient(to right, #0a00b7, #ABE9CD
@@ -24,13 +24,27 @@
 
 #title
 {
+  position: absolute;
 	text-align:center;
 	font-family: Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif; 
 	color: white;
-    margin-right: 39%;
-    float: right;
+    right: 72%;
     font-size: 40px;
-    margin-top: 3%;
+    left: 10%;
+    top: 2%;
+    text-shadow: 2px 2px #000	;
+}
+#subtitle
+{
+  position: absolute;
+	text-align:center;
+	font-family: Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif; 
+	color: white;
+    right: 72%;
+    font-size: 20px;
+    left: 10%;
+    top: 50%;
+    text-shadow: 2px 2px #000	;
 }
 #copyright
 {
@@ -50,7 +64,7 @@
 
 #contentcontainer
 {
-  margin-top: 22%;
+  margin-top: 19%;
   display: block;
     width: 100%;
 }
@@ -92,7 +106,7 @@
 
 #content
 {
-	font-size: 999%;
+	font-size: 80;
     font-family: sans-serif;
 	margin-top: 3%;
 	margin-left: 41%;
@@ -143,6 +157,7 @@ li {
 #navbar {
     overflow: hidden;
     background-color: #333;
+    margin-top: 2.9%;
 	
   }
   
@@ -175,7 +190,6 @@ li {
     margin: 0;
   }
   
-  /* Add a red background color to navigation links on hover */
   .navbar a:hover, .subnav:hover .subnavbtn {
     background-color: #111;
   }
@@ -490,3 +504,55 @@ li {
     color: white;
   }
 
+  html,body {
+    margin: 0;
+    padding: 0;
+  }
+  .slider {
+    width: 40%;
+    left: 30%;
+    position: absolute;
+    display: inline-grid;
+    
+  }
+  
+  .slider-wrapper {
+    width: 500px;
+    height: 217px;
+    position: relative;
+   
+  }
+  
+  .slide {
+    float: left;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 3s linear;
+  }
+  
+  .slider-wrapper > .slide:first-child {
+    opacity: 1;
+  }
+  
+  #volunteerform {
+    position: absolute;
+    left: 18%;
+    background: white;
+    border-radius: 3px;
+    box-shadow: 0 0 200px rgba(255, 255, 255, 0.5), 0 1px 2px rgba(0, 0, 0, 0.3);
+    width: 25%;
+    height:63%;
+
+  }
+
+  .label {
+    color: white;
+    padding: 8px;
+  }
+
+  #innerVolunteer{
+    margin: 10%;
+    text-align: center;
+  }
