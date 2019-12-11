@@ -24,7 +24,7 @@ function login()
 
   responseText = sendPostRequest(payLoad,'http://localhost:3000/login');
 
-  if(responseText.message != null && responseText.message === "Login unsuccessful")
+  if(responseText.message != null && responseText.message === "login unsuccessful")
   {
     alert(responseText.message)
   }
@@ -165,7 +165,7 @@ function getCookie(cname) {
 }
 
 function sendMail(subject, body){
-  var address = "FreedomTailsRescure@gmail.com"
+  var address = "FreedomTailsRescue@gmail.com"
   var mailto_link = 'mailto:' + address + '?subject=' + subject + '&body=' + body;
 
   win = window.open(mailto_link, 'emailWindow');
