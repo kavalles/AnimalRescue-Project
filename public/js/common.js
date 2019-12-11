@@ -24,7 +24,7 @@ function login()
 
   responseText = sendPostRequest(payLoad,'http://localhost:3000/login');
 
-  if(responseText.message != null && responseText.message === "login unsuccessful")
+  if(responseText.message != null && responseText.message === "Login unsuccessful")
   {
     alert(responseText.message)
   }
@@ -36,12 +36,21 @@ function login()
     window.location.href= '/home.html'
 
 
+
   }
 
 }
 
 //log out erases the cookie
+function logout()
+{
+	document.cookie = ""
+	document.cookie = "username=" + "";
+	document.cookie = "authToken=" + "";
+	location.replace('/home.html');
 
+
+}
 
       //signup part
       function signup()
@@ -108,12 +117,14 @@ function start()
     if(username == "")
     {
           document.getElementById("applicationNav").style.display = "none";
+		  document.getElementById("volunteerNav").style.display = "none";
+		  document.getElementById("logoutNav").style.display = "none";
     }
 }
 
 function volunteer()
 {
-  alert("Application has been submitted");
+  alert("Application has been submitted. You will hear from us soon!");
 }
 
 function displayPayPal() 
@@ -131,7 +142,7 @@ function displayPayPal()
 
 function printUserInfo()
 {
-  alert("This user is currently logged in (and the info is available in the cookie):\n" + document.cookie);
+  alert("This user is now logged in");
 }
 
 

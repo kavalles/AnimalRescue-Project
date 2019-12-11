@@ -595,6 +595,13 @@ li {
     width: 40%;
   }
 
+  #eventsHere
+  {
+	text-decoration:none;
+	text-indent:38px;
+	display:inline-block;
+  }
+
   #rightPicture{
     width: 300px;
     float: right;
