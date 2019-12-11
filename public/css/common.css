@@ -106,7 +106,7 @@
 
 #content
 {
-	font-size: 80;
+	font-size: 130%;
     font-family: sans-serif;
   margin: auto;
   margin-left: 5%;
@@ -126,15 +126,7 @@
     padding: 20px;
   }
 
-  ul {
-	position:fixed;
-	width:100%;
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  /* overflow: hidden; */
-  background-color: #333;
-}
+
 
 li {
     float: left;
@@ -263,9 +255,10 @@ li {
   
   .login {
     position: absolute;
+    left: 42%;
     margin: 30px auto;
     padding: 20px 20px 20px;
-    width: 310px;
+    width: 17.5%;
     background: white;
     border-radius: 3px;
     -webkit-box-shadow: 0 0 200px rgba(255, 255, 255, 0.5), 0 1px 2px rgba(0, 0, 0, 0.3);
@@ -342,11 +335,11 @@ li {
     font-size: 11px;
     color: black;
     text-align: center;
-    text-shadow: 0 1px #2a85a1;
+    text-shadow: 0 1px 1;
   }
   
   .login-help a {
-    color: #cce7fa;
+    color: #00008b;
     text-decoration: none;
   }
   
@@ -434,7 +427,7 @@ li {
     resize: none;
     margin: 5px;
     padding: 0 10px;
-    width: 380px;
+    width: 465px;
     height: 34px;
     color: #404040;
     background: white;
@@ -458,7 +451,7 @@ li {
     margin-left: 13%;
     padding: 20px 20px 20px;
     margin-top: 16%;
-    width: 430px;
+    width: 495px;
     background: white;
     border-radius: 3px;
     -webkit-box-shadow: 0 0 200px rgba(255, 255, 255, 0.5), 0 1px 2px rgba(0, 0, 0, 0.3);
@@ -485,7 +478,7 @@ li {
   }
 
   .email input[type=text]{
-    width: 370px;
+    width: 456px;
   }
 
   .contact{
@@ -509,7 +502,7 @@ li {
   }
   .slider {
     width: 40%;
-    left: 30%;
+    left: 40%;
     position: absolute;
     display: inline-grid;
     
@@ -565,10 +558,13 @@ li {
   }
 
   #centerPicture{
-    width: 300px;
+    width: 330px;
     float: left;
     margin-left: 3%;
-    margin-top: 3%;
+    margin-top: 1%;
+    margin-bottom: 3%;
+    
+
     padding-right: 3%;
 
   }
@@ -592,6 +588,7 @@ li {
     margin:auto;
     background: white;
     margin-left: 55%;
+    margin-top: 3;
 
     border-radius: 3px;
     box-shadow: 0 0 200px rgba(255, 255, 255, 0.5), 0 1px 2px rgba(0, 0, 0, 0.3);
@@ -605,4 +602,14 @@ li {
     margin-top: 3%;
     padding-left: 3%;
 
+  }
+
+  h2{
+    margin-left: 5%;
+  }
+
+  ul.paws{
+    list-style-image: url("/images/pawprint.jpg");
+    margin-left: 5%;
+    margin-right: 5%;
   }
