@@ -55,31 +55,41 @@
 </div>
 </div>
 <div id="contentcontainer">
-<h1>Fill out your application here!</h1>
-        <!--didn't need username since they'd have to be logged in anyway to submit application form-->
-        <br><br>
+  <div class= adopt>
+      <h1>Fill out your application here!</h1>
+      <!--didn't need username since they'd have to be logged in anyway to submit application form-->
+      <br><br>
 
-        <label for="is_employed"><b>Are you employed? <br></b></label>
-        <select id ="employed" name="is_employed"> 
-            <option value="false">No</option>
-            <option value="true">Yes</option>  
-        </select>
+      <label for="is_employed"><b>Are you employed? <br></b></label>
+      <select id ="employed" name="is_employed"> 
+          <option value="false">No</option>
+          <option value="true">Yes</option>  
+      </select>
 
-        <br><br>
+      <br><br>
 
-        <label for="occupation"><b>If yes, what is your occupation? <br></b></label>
-        <input id ="occupationTxt" type="text" placeholder="Enter Occupation here" name="occupation">
+      <label for="occupation"><b>If yes, what is your occupation? <br></b></label>
+      <input id ="occupationTxt" type="text" placeholder="Enter Occupation here" name="occupation">
 
-        <br><br>
+      <br><br>
 
-        <label for="home_address"><b>What is your home address?<br></b></label>
-        <input id ="addressTxt" type="text" placeholder="Input your address" name="home_address" required>
+      <label for="home_address"><b>What is your home address?<br></b></label>
+      <input id ="addressTxt" type="text" placeholder="Input your address" name="home_address" required>
 
-        <br><br>
+      <br><br>
 
-        <input type="submit" value="Submit" onclick="application()">
+      <input type="submit" value="Submit" onclick="application()">
 
-        </div>
+      </div>
+      <div id = "adoptText">
+          <img src="/images/applicationdog.jpg" id = "rightPicture" />
+          <h2>Looking to adopt?</h2>
+          <p id="content">
+            Our animals need good homes!<br>
+            Please fill out our application and we'll get back to you by email within 1-2 bussiness days for a followup!
+          </p> 
+  </div>
+
       
         
     <body>

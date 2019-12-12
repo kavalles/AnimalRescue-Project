@@ -458,6 +458,35 @@ li {
     box-shadow: 0 0 200px rgba(255, 255, 255, 0.5), 0 1px 2px rgba(0, 0, 0, 0.3);
   }
 
+  .adopt {
+    position: absolute;
+    margin-left: 13%;
+    padding: 20px 20px 20px;
+    width: 13%;
+    background: white;
+    border-radius: 3px;
+    -webkit-box-shadow: 0 0 200px rgba(255, 255, 255, 0.5), 0 1px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 200px rgba(255, 255, 255, 0.5), 0 1px 2px rgba(0, 0, 0, 0.3);
+  }
+  .adopt h1 {
+    margin: -20px -20px 21px;
+    line-height: 40px;
+    font-size: 15px;
+    font-weight: bold;
+    color: #555;
+    text-align: center;
+    text-shadow: 0 1px white;
+    background: #f3f3f3;
+    border-bottom: 1px solid #cfcfcf;
+    border-radius: 3px 3px 0 0;
+    background-image: -webkit-linear-gradient(top, whiteffd, #eef2f5);
+    background-image: -moz-linear-gradient(top, whiteffd, #eef2f5);
+    background-image: -o-linear-gradient(top, whiteffd, #eef2f5);
+    background-image: linear-gradient(to bottom, whiteffd, #eef2f5);
+    -webkit-box-shadow: 0 1px whitesmoke;
+    box-shadow: 0 1px whitesmoke;
+  }
+
   .email h1 {
     margin: -20px -20px 21px;
     line-height: 40px;
@@ -584,10 +613,21 @@ li {
     font-family: sans-serif;
     font-size: 125%;
     position: absolute;
+    background: white;
+    margin-left: 55%;
+    border-radius: 3px;
+    box-shadow: 0 0 200px rgba(255, 255, 255, 0.5), 0 1px 2px rgba(0, 0, 0, 0.3);
+    width: 40%;
+  }
+
+  #adoptText {
+    font-family: sans-serif;
+    font-size: 125%;
+    position: absolute;
 
     margin:auto;
     background: white;
-    margin-left: 55%;
+    margin-left: 45%;
     margin-top: 3;
 
     border-radius: 3px;
